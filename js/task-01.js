@@ -36,17 +36,17 @@ Elements: 5
 
 
 // Вариант 2
-const itemRef = document.querySelectorAll('#categories');
+const itemRef = document.querySelector('#categories');
 console.log(`Number of categories: ${itemRef.children.length}`);
 
 const titleRef = document.querySelectorAll('h2');
 const listRef = document.querySelectorAll('.item ul');
 
-console.log(`Category: ${itemRef[0].textContent}`);
-console.log(`Elements: ${itemRef[0].children.length}`);
+console.log(`Category: ${titleRef[0].textContent}`);
+console.log(`Elements: ${listRef[0].children.length}`);
 
-console.log(`Category: ${itemRef[1].textContent}`);
-console.log(`Elements: ${itemRef[1].children.length}`);
+console.log(`Category: ${titleRef[1].textContent}`);
+console.log(`Elements: ${listRef[1].children.length}`);
 
-console.log(`Category: ${itemRef[2].textContent}`);
-console.log(`Elements: ${itemRef[2].children.length}`);
+console.log(`Category: ${titleRef[2].textContent}`);
+console.log(`Elements: ${listRef[2].children.length}`);
