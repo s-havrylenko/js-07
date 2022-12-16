@@ -12,6 +12,7 @@ const ingredientsRef = document.querySelector('#ingredients');
 const elements = ingredients.map(element => {
   const itemRef = document.createElement('li');
   itemRef.textContent = element;
+  itemRef.classList.add('item');
 
   return itemRef;
 });
