@@ -12,3 +12,20 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
+
+// Вариант 1
+const galleryRef = document.querySelector('.gallery');
+
+const makeGalleryCard = (images) => { 
+  const imageRef = document.createElement('img');
+  imageRef.src = images.url;
+  imageRef.alt = images.alt;
+  imageRef.width = 320;
+  imageRef.classList.add('gallery__item');
+
+  return imageRef;
+};
+
+const elements = images.map(makeGalleryCard);
+
+galleryRef.append(...elements);
