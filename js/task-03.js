@@ -14,18 +14,31 @@ const images = [
 ];
 
 // Вариант 1
+// const galleryRef = document.querySelector('.gallery');
+
+// const makeGalleryCard = (images) => { 
+//   const imageRef = document.createElement('img');
+//   imageRef.src = images.url;
+//   imageRef.alt = images.alt;
+//   imageRef.width = 320;
+//   imageRef.classList.add('gallery__item');
+
+//   return imageRef;
+// };
+
+// const elements = images.map(makeGalleryCard);
+
+// galleryRef.append(...elements);
+
+
+// Вариант 2 (innerHTML)
 const galleryRef = document.querySelector('.gallery');
 
-const makeGalleryCard = (images) => { 
-  const imageRef = document.createElement('img');
-  imageRef.src = images.url;
-  imageRef.alt = images.alt;
-  imageRef.width = 320;
-  imageRef.classList.add('gallery__item');
-
-  return imageRef;
+const makeGalleryImageMarkup = image => {
+  return `<img class='gallery__item' src='${image.url}' alt='${image.alt}' width='370'</img>`;
 };
 
-const elements = images.map(makeGalleryCard);
+const makeGalleryImages = images.map(makeGalleryImageMarkup).join('');
+console.log(makeGalleryImages);
 
-galleryRef.append(...elements);
+galleryRef.insertAdjacentHTML('afterbegin', makeGalleryImages);
