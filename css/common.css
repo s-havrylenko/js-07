@@ -35,3 +35,8 @@ button {
 .gallery__item:nth-child(3n) {
   margin-right: 0px;
 }
+
+.innerbox {
+  display: inline-flex;
+  margin: 15px;
+}
