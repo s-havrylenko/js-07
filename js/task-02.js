@@ -7,16 +7,30 @@ const ingredients = [
   'Condiments',
 ];
 
-const ingredientsRef = document.querySelector('#ingredients');
+const listIngredientsRef = document.querySelector('#ingredients');
 
-const makeIngredientsList = ingredients.map(element => {
-  const itemRef = document.createElement('li');
-  itemRef.textContent = element;
-  itemRef.classList.add('item');
+// const makeIngredientsList = ingredients.map(element => {
+//   const itemRef = document.createElement('li');
+//   itemRef.textContent = element;
+//   itemRef.classList.add('item');
 
-  return itemRef;
-});
+//   return itemRef;
+// });
 
-// console.log(elements);
+// // console.log(elements);
+// listIngredientsRef.append(...makeIngredientsList);
 
-ingredientsRef.append(...makeIngredientsList);
+
+// Выполним с использованием функций 
+const makeIngredientsList = ingredients => {
+  return ingredients.map(ingredient => {
+    const itemRef = document.createElement('li');  
+    itemRef.textContent = ingredient;
+    itemRef.classList.add('item');
+  
+    return itemRef;
+  });
+}
+
+const elements = makeIngredientsList(ingredients);
+listIngredientsRef.append(...elements);
