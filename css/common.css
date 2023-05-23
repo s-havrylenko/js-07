@@ -26,10 +26,14 @@ button {
 .gallery {
   display: flex;
   justify-content: center;
+
+  list-style: none;
 }
 
 .gallery__item {
   margin-right: 30px;
+  display: flex;
+  align-items: stretch;
 }
 
 .gallery__item:nth-child(3n) {

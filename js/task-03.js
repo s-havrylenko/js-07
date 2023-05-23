@@ -34,8 +34,15 @@ const images = [
 // Вариант 2 (innerHTML)
 const galleryRef = document.querySelector('.gallery');
 
-const makeGalleryImageMarkup = image => {
-  return `<img class='gallery__item' src='${image.url}' alt='${image.alt}' width='370'</img>`;
+const makeGalleryImageMarkup = ({ url, alt }) => {
+  return `
+  <li class="gallery__item">
+    <img
+    src="${url}" 
+    alt="${alt}" 
+    width="370"></img>
+  </li>  
+  `;
 };
 
 const makeGalleryImages = images.map(makeGalleryImageMarkup).join('');
